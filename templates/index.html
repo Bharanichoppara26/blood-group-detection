@@ -4,81 +4,119 @@
     <meta charset="UTF-8">
     <title>Fingerprint to Blood Group Classifier</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
+            text-align: center;
         }
 
+        /* Heading Styling */
         h1 {
-            margin: 40px 0 20px;
-            color: #003366;
-            font-size: 2.5em;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #bb86fc; /* Purple accent for contrast */
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
+        /* Upload Box Styling */
         .upload-box {
-            background-color: white;
-            border: 2px dashed #007acc;
-            border-radius: 15px;
-            padding: 40px 30px;
-            width: 60%;
-            max-width: 600px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: #1e1e1e;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
+        .upload-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Input Styling */
         input[type="file"] {
+            background: #2c2c2c;
+            color: #e0e0e0;
             padding: 10px;
-            font-size: 1em;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            width: 100%;
+            border: 2px solid #bb86fc;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        input[type="file"]:hover {
+            background: #3a3a3a;
+            border-color: #ff6f00; /* Orange accent for hover effect */
         }
 
         input[type="submit"] {
-            margin-top: 20px;
-            padding: 10px 25px;
-            background-color: #007acc;
+            background: #bb86fc;
+            color: #121212;
+            font-weight: bold;
+            padding: 10px 20px;
             border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 1em;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: #005f99;
+            background: #ff6f00;
+            transform: scale(1.05);
         }
 
+        /* Prediction Section Styling */
         .prediction {
             margin-top: 30px;
-            padding: 25px;
-            background-color: #e8f5e9;
-            border-left: 6px solid #2e7d32;
+            background: #1e1e1e;
+            padding: 20px;
             border-radius: 10px;
-            width: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            width: 100%;
             max-width: 500px;
             text-align: center;
-            font-size: 1.3em;
-            color: #2e7d32;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .prediction p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #bb86fc;
         }
 
         .prediction img {
-            margin-top: 15px;
-            width: 300px;
-            border-radius: 10px;
-            border: 2px solid #ccc;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
             .upload-box, .prediction {
-                width: 85%;
+                padding: 20px;
             }
         }
     </style>

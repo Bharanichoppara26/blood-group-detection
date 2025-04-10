@@ -1,0 +1,5 @@
+dataset/
+featureExtractor/
+featureExtractor.egg-info/
+models/
+training/

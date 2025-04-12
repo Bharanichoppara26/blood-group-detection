@@ -6,6 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from PIL import Image
 import os
+from featureExtractor import Features
 
 # ====================== Supporting Modules (Unchanged) ====================== #
 class ChannelAttention(nn.Module):
